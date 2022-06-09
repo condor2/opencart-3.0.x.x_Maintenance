@@ -61,7 +61,6 @@
                       <th class="text-right">{{ text_action }}</th>
                         </thead>
                     <tbody>
-                    
                     {% if downloads %}
                     {% for download in downloads %}
                     <tr>
@@ -82,7 +81,6 @@
                     </tr>
                     {% endif %}
                     </tbody>
-                    
                   </table>
                 </fieldset>
               </div>
@@ -128,6 +126,11 @@
                 <div class="col-xs-7 text-right">{% for i in 1..5 %}
                   {% if rating >= i %}<i class="fa fa-star"></i>{% else %}<i class="fa fa-star-o"></i>{% endif %}
                   {% endfor %} ({{ rating_total }})</div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-xs-5"><strong>{{ text_compatibility }}</strong></div>
+                <div class="col-xs-7 text-right">{{ compatibility }}</div>
               </div>
               <hr>
               <div class="row">
@@ -521,4 +524,4 @@ $(document).ready(function() {
 });
 //--></script> 
 </div>
-{{ footer }} 
+{{ footer }}

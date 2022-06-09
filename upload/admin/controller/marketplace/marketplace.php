@@ -617,6 +617,7 @@ class ControllerMarketplaceMarketplace extends Controller {
 			$data['purchased'] = $response_info['purchased'];
 			$data['rating'] = $response_info['rating'];
 			$data['rating_total'] = $response_info['rating_total'];
+			$data['compatibility'] = $response_info['compatibility'];
 			$data['downloaded'] = $response_info['downloaded'];
 			$data['sales'] = $response_info['sales'];
 			$data['date_added'] = date($this->language->get('date_format_short'), strtotime($response_info['date_added']));
