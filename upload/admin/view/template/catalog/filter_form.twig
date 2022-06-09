@@ -55,7 +55,6 @@
                 </tr>
               </thead>
               <tbody>
-              
               {% set filter_row = 0 %}
               {% for filter in filters %}
               <tr id="filter-row{{ filter_row }}">
@@ -74,7 +73,6 @@
               {% set filter_row = filter_row + 1 %}
               {% endfor %}
                 </tbody>
-              
               <tfoot>
                 <tr>
                   <td colspan="2"></td>
@@ -108,4 +106,4 @@ function addFilterRow() {
 	filter_row++;
 }
 //--></script></div>
-{{ footer }} 
+{{ footer }}
