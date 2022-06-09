@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5
+class ComposerStaticInitf2a35fd78105a56e8c94270e2d0109de
 {
     public static $files = array (
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
@@ -48,6 +48,10 @@ class ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5
         'C' => 
         array (
             'Cardinity\\' => 10,
+        ),
+        'B' => 
+        array (
+            'Braintree\\' => 10,
         ),
     );
 
@@ -112,6 +116,10 @@ class ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5
         array (
             0 => __DIR__ . '/..' . '/cardinity/cardinity-sdk-php/src',
         ),
+        'Braintree\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/braintree/braintree_php/lib/Braintree',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -126,13 +134,6 @@ class ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5
                 0 => __DIR__ . '/..' . '/divido/divido-php/lib',
             ),
         ),
-        'B' => 
-        array (
-            'Braintree' => 
-            array (
-                0 => __DIR__ . '/..' . '/braintree/braintree_php/lib',
-            ),
-        ),
     );
 
     public static $classMap = array (
@@ -142,11 +143,11 @@ class ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit739b8c4876316c3496b6b4e434ec69a5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf2a35fd78105a56e8c94270e2d0109de::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf2a35fd78105a56e8c94270e2d0109de::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitf2a35fd78105a56e8c94270e2d0109de::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf2a35fd78105a56e8c94270e2d0109de::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitf2a35fd78105a56e8c94270e2d0109de::$classMap;
 
         }, null, ClassLoader::class);
     }
