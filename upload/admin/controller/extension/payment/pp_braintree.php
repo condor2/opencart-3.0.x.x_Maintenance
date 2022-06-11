@@ -804,7 +804,7 @@ class ControllerExtensionPaymentPPBraintree extends Controller {
 		}
 
 		if (isset($this->request->get['filter_merchant_account_id'])) {
-			$filter_merchant_account_id = $this->request->get['filter_merchant_account_id'];
+			$filter_merchant_account_id = (int)$this->request->get['filter_merchant_account_id'];
 		} else {
 			$filter_merchant_account_id = null;
 		}

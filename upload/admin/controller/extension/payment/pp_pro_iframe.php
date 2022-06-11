@@ -308,7 +308,7 @@ class ControllerExtensionPaymentPPProIframe extends Controller {
 			$data['cancel'] = '';
 		}
 
-		$data['transaction_id'] = $this->request->get['transaction_id'];
+		$data['transaction_id'] = (int)$this->request->get['transaction_id'];
 
 		$pp_transaction = $this->model_extension_payment_pp_pro_iframe->getTransaction($this->request->get['transaction_id']);
 

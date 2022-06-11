@@ -302,7 +302,7 @@ class ControllerExtensionPaymentSquareup extends Controller {
         $this->load->library('squareup');
 
         if (isset($this->request->get['squareup_transaction_id'])) {
-            $squareup_transaction_id = $this->request->get['squareup_transaction_id'];
+            $squareup_transaction_id = (int)$this->request->get['squareup_transaction_id'];
         } else {
             $squareup_transaction_id = 0;
         }
@@ -471,7 +471,7 @@ class ControllerExtensionPaymentSquareup extends Controller {
         );
 
         if (isset($this->request->get['order_id'])) {
-            $filter_data['order_id'] = $this->request->get['order_id'];
+            $filter_data['order_id'] = (int)$this->request->get['order_id'];
         }
 
         $transactions_total = $this->model_extension_payment_squareup->getTotalTransactions($filter_data);
@@ -835,7 +835,7 @@ class ControllerExtensionPaymentSquareup extends Controller {
         $this->load->language('extension/payment/squareup');
 
         if (isset($this->request->get['order_recurring_id'])) {
-            $order_recurring_id = $this->request->get['order_recurring_id'];
+            $order_recurring_id = (int)$this->request->get['order_recurring_id'];
         } else {
             $order_recurring_id = 0;
         }
@@ -899,7 +899,7 @@ class ControllerExtensionPaymentSquareup extends Controller {
             $this->load->model('sale/recurring');
             
             if (isset($this->request->get['order_recurring_id'])) {
-                $order_recurring_id = $this->request->get['order_recurring_id'];
+                $order_recurring_id = (int)$this->request->get['order_recurring_id'];
             } else {
                 $order_recurring_id = 0;
             }
@@ -996,7 +996,7 @@ class ControllerExtensionPaymentSquareup extends Controller {
         }
 
         if (isset($this->request->get['squareup_transaction_id'])) {
-            $squareup_transaction_id = $this->request->get['squareup_transaction_id'];
+            $squareup_transaction_id = (int)$this->request->get['squareup_transaction_id'];
         } else {
             $squareup_transaction_id = 0;
         }

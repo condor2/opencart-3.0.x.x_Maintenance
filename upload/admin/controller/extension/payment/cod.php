@@ -53,7 +53,7 @@ class ControllerExtensionPaymentCod extends Controller {
 		if (isset($this->request->post['payment_cod_order_status_id'])) {
 			$data['payment_cod_order_status_id'] = $this->request->post['payment_cod_order_status_id'];
 		} else {
-			$data['payment_cod_order_status_id'] = $this->config->get('payment_cod_order_status_id');
+			$data['payment_cod_order_status_id'] = (int)$this->config->get('payment_cod_order_status_id');
 		}
 
 		$this->load->model('localisation/order_status');
