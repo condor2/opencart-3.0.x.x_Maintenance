@@ -82,6 +82,22 @@
                 </span>
               </div>
             </div>
+            <div class="form-group">
+              <label class="control-label" for="input-affiliate-status">{{ entry_affiliate_status }}</label>
+              <select name="filter_affiliate_status" id="input-affiliate-status" class="form-control">
+                <option value=""></option>
+                {% if filter_affiliate_status == '1' %}
+                <option value="1" selected="selected">{{ text_enabled }}</option>
+                {% else %}
+                <option value="1">{{ text_enabled }}</option>
+                {% endif %}
+                {% if filter_affiliate_status == '0' %}
+                <option value="0" selected="selected">{{ text_disabled }}</option>
+                {% else %}
+                <option value="0">{{ text_disabled }}</option>
+                {% endif %}
+              </select>
+            </div>
             <div class="form-group text-right">
               <button type="button" id="button-filter" class="btn btn-default"><i class="fa fa-filter"></i> {{ button_filter }}</button>
             </div>
@@ -185,30 +201,49 @@
   <script type="text/javascript"><!--
   $('#button-filter').on('click', function() {
     url = 'index.php?route=customer/customer&user_token={{ user_token }}';
+
     var filter_name = $('input[name=\'filter_name\']').val();
+
     if (filter_name) {
       url += '&filter_name=' + encodeURIComponent(filter_name);
     }
+
     var filter_email = $('input[name=\'filter_email\']').val();
+
     if (filter_email) {
       url += '&filter_email=' + encodeURIComponent(filter_email);
     }
+
     var filter_customer_group_id = $('select[name=\'filter_customer_group_id\']').val();
+
     if (filter_customer_group_id !== '') {
       url += '&filter_customer_group_id=' + encodeURIComponent(filter_customer_group_id);
     }
+
     var filter_status = $('select[name=\'filter_status\']').val();
+
     if (filter_status !== '') {
       url += '&filter_status=' + encodeURIComponent(filter_status); 
     }
+
     var filter_ip = $('input[name=\'filter_ip\']').val();
+
     if (filter_ip) {
       url += '&filter_ip=' + encodeURIComponent(filter_ip);
     }
+
     var filter_date_added = $('input[name=\'filter_date_added\']').val();
+
     if (filter_date_added) {
       url += '&filter_date_added=' + encodeURIComponent(filter_date_added);
     }
+
+    var filter_affiliate_status = $('select[name=\'filter_affiliate_status\']').val();
+
+    if (filter_affiliate_status !== '') {
+      	url += '&filter_affiliate_status=' + encodeURIComponent(filter_affiliate_status); 
+    }
+
     location = url;
   });
   //--></script>
@@ -216,7 +251,7 @@
   $('input[name=\'filter_name\']').autocomplete({
     'source': function(request, response) {
       $.ajax({
-        url: 'index.php?route=customer/customer/autocomplete&user_token={{ user_token }}&filter_name=' +  encodeURIComponent(request),
+        url: 'index.php?route=customer/customer/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
         dataType: 'json',
         success: function(json) {
           response($.map(json, function(item) {
@@ -235,7 +270,7 @@
   $('input[name=\'filter_email\']').autocomplete({
     'source': function(request, response) {
       $.ajax({
-        url: 'index.php?route=customer/customer/autocomplete&user_token={{ user_token }}&filter_email=' +  encodeURIComponent(request),
+        url: 'index.php?route=customer/customer/autocomplete&user_token={{ user_token }}&filter_email=' + encodeURIComponent(request),
         dataType: 'json',
         success: function(json) {
           response($.map(json, function(item) {
