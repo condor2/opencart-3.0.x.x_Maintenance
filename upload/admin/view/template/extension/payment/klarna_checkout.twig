@@ -578,7 +578,7 @@ function addAccount() {
 	account_row++;
 }
 
-$(document).delegate('#button-ip-add', 'click', function() {
+$(document).on('click', '#button-ip-add', function() {
     $.ajax({
         url: 'index.php?route=user/api/addip&user_token={{ user_token }}&api_id={{ api_id }}',
         type: 'post',
